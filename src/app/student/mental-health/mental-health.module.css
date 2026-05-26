@@ -1,0 +1,92 @@
+.page { display: flex; flex-direction: column; gap: 1.5rem; max-width: 1100px; }
+.header { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.5rem; }
+.title { font-size: 1.875rem; font-weight: 800; color: var(--text-primary); letter-spacing: -0.04em; margin-bottom: 0.375rem; display: flex; align-items: center; gap: 0.5rem; }
+.sub { font-size: 0.9375rem; color: var(--text-secondary); }
+
+/* Crisis Banner */
+.crisisBanner { background: linear-gradient(to right, rgba(239, 68, 68, 0.05), rgba(239, 68, 68, 0.15)); border-left: 4px solid var(--danger); border-radius: var(--radius-xl); padding: 1.25rem 1.5rem; display: flex; align-items: flex-start; gap: 1.25rem; box-shadow: var(--shadow-sm); position: relative; overflow: hidden; }
+.crisisBanner::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(239,68,68,0.05) 0%, transparent 70%); animation: pulseBg 4s infinite; pointer-events: none; }
+@keyframes pulseBg { 0% { transform: scale(0.9); opacity: 0.5; } 50% { transform: scale(1.1); opacity: 1; } 100% { transform: scale(0.9); opacity: 0.5; } }
+
+.crisisIcon { width: 44px; height: 44px; background: #fff; color: var(--danger); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2); }
+.crisisContent { flex: 1; z-index: 1; }
+.crisisTitle { font-size: 1.0625rem; font-weight: 800; color: var(--danger); margin-bottom: 0.375rem; letter-spacing: -0.01em; }
+.crisisText { font-size: 0.875rem; color: var(--text-primary); margin-bottom: 1rem; line-height: 1.5; font-weight: 500; }
+.crisisActions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.helpBtn { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8125rem; font-weight: 700; padding: 0.5rem 1rem; border-radius: var(--radius-full); text-decoration: none; transition: all var(--duration-fast); cursor: pointer; border: none; }
+.helpBtnPrimary { background: var(--danger); color: #fff; box-shadow: 0 4px 12px rgba(239,68,68,0.3); }
+.helpBtnPrimary:hover { background: #dc2626; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(239,68,68,0.4); }
+.helpBtnSecondary { background: #fff; color: var(--danger); border: 1.5px solid rgba(239,68,68,0.3); }
+.helpBtnSecondary:hover { background: rgba(239,68,68,0.05); }
+
+/* Main Grid */
+.grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.5rem; align-items: start; }
+
+.card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-2xl); padding: 1.5rem; box-shadow: var(--shadow-sm); transition: box-shadow var(--duration-base); }
+.card:hover { box-shadow: var(--shadow-md); }
+.cardHeader { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
+.cardHeader h2 { font-size: 1.125rem; font-weight: 800; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem; }
+
+/* Health Tracker Form */
+.trackerGrid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin-bottom: 1.5rem; }
+.trackRow { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.trackItem { display: flex; flex-direction: column; gap: 0.625rem; }
+.trackLabel { font-size: 0.8125rem; font-weight: 700; color: var(--text-secondary); display: flex; align-items: center; gap: 0.375rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.trackInputWrap { position: relative; display: flex; align-items: center; }
+.trackInput { width: 100%; padding: 0.75rem 1rem; padding-left: 2.5rem; border-radius: var(--radius-lg); border: 1.5px solid var(--border); background: var(--bg-input); font-size: 0.9375rem; color: var(--text-primary); outline: none; transition: all var(--duration-fast); font-weight: 500; appearance: none; }
+.trackInput:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(99,102,241,0.1); }
+.trackInputIcon { position: absolute; left: 0.875rem; color: var(--primary); pointer-events: none; }
+
+.moodSelector { display: flex; gap: 0.75rem; justify-content: space-between; background: var(--bg-input); padding: 0.5rem; border-radius: var(--radius-xl); border: 1.5px solid var(--border); }
+.moodBtn { flex: 1; aspect-ratio: 1; border-radius: var(--radius-lg); border: 2px solid transparent; background: transparent; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.25rem; cursor: pointer; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+.moodBtn span:first-child { font-size: 2rem; transition: transform 0.3s; }
+.moodLabel { font-size: 0.6875rem; font-weight: 700; color: var(--text-muted); transition: color 0.3s; }
+.moodBtn:hover span:first-child { transform: scale(1.15) translateY(-2px); }
+.moodActive { background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-color: var(--primary); }
+.moodActive span:first-child { transform: scale(1.1); }
+.moodActive .moodLabel { color: var(--primary); }
+
+.saveBtn { width: 100%; padding: 0.875rem; border-radius: var(--radius-xl); background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: #fff; font-weight: 700; font-size: 0.9375rem; border: none; cursor: pointer; box-shadow: 0 4px 15px rgba(99,102,241,0.3); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
+.saveBtn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(99,102,241,0.4); }
+
+/* Assessments */
+.assessList { display: flex; flex-direction: column; gap: 1rem; }
+.assessItem { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; padding: 1.25rem; border: 1px solid var(--border); border-radius: var(--radius-xl); background: var(--bg-card); transition: all 0.2s; cursor: pointer; position: relative; overflow: hidden; }
+.assessItem::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--primary); transform: scaleY(0); transition: transform 0.2s; transform-origin: left; }
+.assessItem:hover { border-color: var(--primary); transform: translateX(4px); box-shadow: var(--shadow-sm); }
+.assessItem:hover::before { transform: scaleY(1); }
+.assessInfo h3 { font-size: 0.9375rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.25rem; }
+.assessInfo p { font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.4; }
+.assessBtn { padding: 0.5rem 1rem; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700; color: var(--primary); background: var(--primary-light); border: none; cursor: pointer; transition: all 0.2s; flex-shrink: 0; }
+.assessItem:hover .assessBtn { background: var(--primary); color: #fff; }
+
+/* Twin Chat - Premium Glassmorphism */
+.twinCard { display: flex; flex-direction: column; height: 600px; padding: 0; overflow: hidden; background: #0f172a; border: 1px solid #1e293b; box-shadow: 0 20px 40px rgba(0,0,0,0.2); position: relative; }
+.twinCard::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 150px; background: radial-gradient(circle at top right, rgba(99,102,241,0.2), transparent); pointer-events: none; }
+
+.twinHeader { display: flex; align-items: center; gap: 1rem; padding: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(15,23,42,0.8); backdrop-filter: blur(12px); z-index: 10; }
+.twinIcon { width: 48px; height: 48px; border-radius: 16px; background: linear-gradient(135deg, #6366f1, #a855f7); display: flex; align-items: center; justify-content: center; color: #fff; box-shadow: 0 4px 12px rgba(99,102,241,0.4); }
+.twinHeader h2 { font-size: 1.125rem; font-weight: 800; color: #f8fafc; margin: 0 0 0.1rem 0; letter-spacing: -0.01em; }
+.twinHeader p { font-size: 0.8125rem; color: #94a3b8; margin: 0; font-weight: 500; display: flex; align-items: center; gap: 0.375rem; }
+.onlineDot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; box-shadow: 0 0 8px #22c55e; }
+
+.twinChatBox { flex: 1; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; overflow-y: auto; background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiLz48L3N2Zz4='); }
+.chatMsg { font-size: 0.875rem; padding: 0.875rem 1.125rem; border-radius: 18px; width: fit-content; max-width: 85%; line-height: 1.5; position: relative; animation: msgPop 0.3s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+@keyframes msgPop { from { opacity: 0; transform: translateY(10px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+.msgAi { background: rgba(30,41,59,0.8); backdrop-filter: blur(8px); color: #e2e8f0; align-self: flex-start; border-bottom-left-radius: 4px; border: 1px solid rgba(255,255,255,0.05); }
+.msgUser { background: linear-gradient(135deg, #6366f1, #4f46e5); color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; }
+
+.chatInputWrap { padding: 1.25rem; background: rgba(15,23,42,0.9); backdrop-filter: blur(12px); border-top: 1px solid rgba(255,255,255,0.05); z-index: 10; }
+.chatInput { display: flex; gap: 0.75rem; background: rgba(30,41,59,0.8); padding: 0.5rem; border-radius: var(--radius-full); border: 1px solid rgba(255,255,255,0.1); transition: border-color 0.2s; }
+.chatInput:focus-within { border-color: #6366f1; }
+.chatInput input { flex: 1; padding: 0.5rem 1rem; border: none; background: transparent; color: #f8fafc; font-size: 0.875rem; outline: none; }
+.chatInput input::placeholder { color: #64748b; }
+.chatSend { width: 40px; height: 40px; border-radius: 50%; background: #6366f1; border: none; color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 12px rgba(99,102,241,0.3); }
+.chatSend:hover { background: #4f46e5; transform: scale(1.05); }
+
+.disclaimer { font-size: 0.6875rem; color: #64748b; text-align: center; margin-top: 0.75rem; font-weight: 500; }
+
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .twinCard { height: 500px; } }
+@media (max-width: 480px) { .trackRow { grid-template-columns: 1fr; } .crisisBanner { flex-direction: column; } .crisisIcon { width: 36px; height: 36px; } }

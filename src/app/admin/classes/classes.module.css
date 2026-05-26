@@ -1,0 +1,41 @@
+.page { display: flex; flex-direction: column; gap: 1.5rem; max-width: 1100px; }
+.header { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; }
+.title { font-size: 1.625rem; font-weight: 800; color: var(--text-primary); letter-spacing: -0.04em; margin-bottom: 0.25rem; }
+.sub { font-size: 0.875rem; color: var(--text-secondary); }
+.addBtn { display: flex; align-items: center; gap: 0.5rem; padding: 0.625rem 1.125rem; background: linear-gradient(135deg, var(--accent-amber), #d97706); color: #fff; border-radius: var(--radius-lg); font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: all var(--duration-base); }
+.addBtn:hover { transform: translateY(-1px); }
+
+/* Grade Row */
+.gradeRow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.875rem; }
+.gradeCard { background: var(--bg-card); border: 2px solid transparent; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-sm); }
+.gradeHeader { display: flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1rem; font-size: 0.875rem; font-weight: 700; }
+.gradeStats { display: flex; gap: 1.5rem; padding: 0.875rem 1rem; }
+.gradeStat { display: flex; flex-direction: column; gap: 0.2rem; }
+.gradeStatValue { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.04em; color: var(--text-primary); }
+.gradeStatLabel { font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
+
+/* Table */
+.tableCard { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-sm); }
+.tableWrap { overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; min-width: 700px; }
+.table th { padding: 0.875rem 1rem; text-align: left; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); background: var(--bg-card-hover); border-bottom: 1px solid var(--border); }
+.table td { padding: 0.875rem 1rem; font-size: 0.875rem; color: var(--text-primary); border-bottom: 1px solid var(--border); vertical-align: middle; }
+.table tr:last-child td { border-bottom: none; }
+.table tbody tr:hover { background: var(--bg-card-hover); }
+
+.classBadge { font-size: 0.8125rem; font-weight: 700; padding: 0.25rem 0.625rem; border-radius: var(--radius-full); }
+.teacherCell { display: flex; align-items: center; gap: 0.5rem; }
+.teacherAvatar { width: 28px; height: 28px; background: linear-gradient(135deg, var(--secondary), #059669); border-radius: 50%; color: #fff; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.roomBadge { font-size: 0.75rem; font-weight: 600; background: var(--border); color: var(--text-secondary); padding: 0.2rem 0.5rem; border-radius: var(--radius-md); }
+.strengthCell { display: flex; align-items: center; gap: 0.375rem; }
+.occCell { display: flex; align-items: center; gap: 0.5rem; }
+.occBar { flex: 1; min-width: 60px; height: 5px; background: var(--border); border-radius: 99px; overflow: hidden; }
+.occFill { height: 100%; border-radius: 99px; transition: width 0.4s; }
+.actions { display: flex; gap: 0.375rem; }
+.viewBtn, .editBtn { padding: 0.3125rem 0.625rem; border-radius: var(--radius-md); font-size: 0.75rem; font-weight: 600; cursor: pointer; transition: all var(--duration-fast); }
+.viewBtn { background: var(--primary-light); color: var(--primary); }
+.viewBtn:hover { background: var(--primary); color: #fff; }
+.editBtn { background: var(--border); color: var(--text-secondary); }
+.editBtn:hover { background: var(--text-muted); color: #fff; }
+
+@media (max-width: 768px) { .gradeRow { grid-template-columns: repeat(2, 1fr); } }
